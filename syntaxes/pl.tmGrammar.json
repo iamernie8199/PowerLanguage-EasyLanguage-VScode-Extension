@@ -4,15 +4,24 @@
     "repository": {
       "expression": {
         "patterns": [
-            { "include": "#comments_line" },
-            { "include": "#comments_block" },
-            { "include": "#letter" }, 
-            { "include": "#var" },
-            { "include": "#paren-expression" },
-            { "include": "#entities" },  
-            { "include": "#function" },
-            { "include": "#operators" },
-            { "include": "#control" }]
+          { "include": "#comments_line" },
+          { "include": "#comments_block" },
+          { "include": "#letter" }, 
+          { "include": "#var" },
+          { "include": "#paren-expression" },
+          { "include": "#entities" },  
+          { "include": "#function" },
+          { "include": "#operators" },
+          { "include": "#control" },
+          { "name": "string.quoted.single",
+            "begin": "'",
+            "end": "'"
+          },
+          { "name": "string.quoted.double",
+            "begin": "\"",
+            "end": "\""
+          }
+        ]
       },
       "comments_line": {
         "begin": "//",
@@ -50,7 +59,7 @@
         }]
       },
       "letter": {
-        "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|data[0-9]|input|ticks|(?<=\\s|=|\\()(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\s|=|\\)))",
+        "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))",
         "name": "constant.character"
       },
       "var": {
@@ -58,7 +67,7 @@
         "name": "keyword.var"
       },
       "operators": {
-        "match": "(?i)(or|and|true|false)",
+        "match": "(?i)\\s(or|and)",
         "name": "keyword.op"
       },
       "paren-expression": {
