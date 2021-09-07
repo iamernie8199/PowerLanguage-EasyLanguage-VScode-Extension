@@ -19,4 +19,5 @@ VScode Extension for PowerLanguage/EasyLanguage
 ## Todo
 - [ ] Format Code
 - [ ] Syntax Highlighting(All reserved words)
+- [ ] Semantic Highlight
 - [ ] Snippets
