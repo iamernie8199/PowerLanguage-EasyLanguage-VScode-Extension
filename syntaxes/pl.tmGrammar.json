@@ -49,7 +49,7 @@
         "name": "comment.block"
         },
       "control": {
-        "match": "(?i)(if|else|while|for|then|to|begin|)\\s|end",
+        "match": "(?i)(if|else|while|for|then|to|begin|)\\s|end(?=;|\\s)",
         "name": "keyword.control.untitled"
       },
       "function": {
