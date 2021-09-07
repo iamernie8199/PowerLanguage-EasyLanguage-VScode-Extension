@@ -4,6 +4,10 @@
     "description": "PowerLanguage/EasyLanguage Configuration",
     "version": "0.0.1",
     "publisher": "iamernie8199",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/iamernie8199/PowerLanguage-EasyLanguage-VScode-Extension.git"
+    },
     "engines": {
         "vscode": "^1.28.0"
     },
