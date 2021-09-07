@@ -1,0 +1,64 @@
+{
+    "scopeName": "source.powerlanguage",
+    "patterns": [{ "include": "#expression" }],
+    "repository": {
+      "expression": {
+        "patterns": [
+            { "include": "#comments_line" },
+            { "include": "#comments_block" },
+            { "include": "#letter" }, 
+            { "include": "#var" },
+            { "include": "#paren-expression" }, 
+            { "include": "#control" }]
+      },
+      "comments_line": {
+        "begin": "//",
+        "beginCaptures": {
+            "0": {
+                "name": "punctuation.definition.comment"
+            }
+        },
+        "end": "(?=\")|\\n",
+        "name": "comment.line.double-slash"
+      },
+      "comments_block":{
+        "begin": "{",
+        "beginCaptures": {
+            "0": {
+                "name": "punctuation.definition.comment.begin"
+            }
+        },
+        "end": "(?=\")|}",
+        "endCaptures": {
+            "0": {
+                "name": "punctuation.definition.comment.end"
+            }
+        },
+        "name": "comment.block"
+        },
+      "control": {
+        "match": "\\siff|(?i)(if|else|while|for|then|begin|)\\s|end",
+        "name": "keyword.control.untitled"
+      },
+      "letter": {
+        "match": "(?i)marketposition|(?i)var|(?i)data[0-9]|(?i)input|\\s(?i)(o|h|l|c)\\s",
+        "name": "keyword.letter"
+      },
+      "var": {
+        "match": "(?i)value[0-9]|(?i)plot[0-9]|(?i)condition[0-9]",
+        "name": "keyword.var"
+      },
+      "paren-expression": {
+        "begin": "\\(",
+        "end": "\\)",
+        "beginCaptures": {
+          "0": { "name": "punctuation.paren.open" }
+        },
+        "endCaptures": {
+          "0": { "name": "punctuation.paren.close" }
+        },
+        "name": "expression.group",
+        "patterns": [{ "include": "#expression" }]
+      }
+    }
+  }
