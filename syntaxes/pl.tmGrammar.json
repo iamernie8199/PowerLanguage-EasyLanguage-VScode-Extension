@@ -8,7 +8,8 @@
             { "include": "#comments_block" },
             { "include": "#letter" }, 
             { "include": "#var" },
-            { "include": "#paren-expression" }, 
+            { "include": "#paren-expression" },
+            { "include": "#entities" },  
             { "include": "#control" }]
       },
       "comments_line": {
@@ -37,12 +38,12 @@
         "name": "comment.block"
         },
       "control": {
-        "match": "\\siff|(?i)(if|else|while|for|then|begin|)\\s|end",
+        "match": "\\siff|(?i)(if|else|while|for|then|to|begin|)\\s|end",
         "name": "keyword.control.untitled"
       },
       "letter": {
-        "match": "(?i)marketposition|(?i)var|(?i)data[0-9]|(?i)input|\\s(?i)(o|h|l|c)\\s",
-        "name": "keyword.letter"
+        "match": "(?i)(marketposition|var|array|data[0-9]|input|ticks|\\s(o|h|l|c|v)\\s)",
+        "name": "constant.character"
       },
       "var": {
         "match": "(?i)value[0-9]|(?i)plot[0-9]|(?i)condition[0-9]",
@@ -59,6 +60,22 @@
         },
         "name": "expression.group",
         "patterns": [{ "include": "#expression" }]
+      },
+      "entities": {
+        "patterns": [
+          {
+            "captures": {
+              "1": {
+                "name": "punctuation.definition.entity"
+              },
+              "3": {
+                "name": "punctuation.definition.entity"
+              }
+            },
+            "match": "[0-9]+",
+            "name": "constant.character.entity.numeric.decimal"
+          }
+        ]
       }
     }
   }
