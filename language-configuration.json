@@ -37,7 +37,7 @@
 	},
     "onEnterRules": [
         {
-            "beforeText": "then",
+            "beforeText": "then|var|array|input",
             "action": { 
                 "indent": "indent",
             },
