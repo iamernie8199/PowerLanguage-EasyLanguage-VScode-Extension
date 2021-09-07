@@ -10,6 +10,8 @@
             { "include": "#var" },
             { "include": "#paren-expression" },
             { "include": "#entities" },  
+            { "include": "#function" },
+            { "include": "#operators" },
             { "include": "#control" }]
       },
       "comments_line": {
@@ -38,16 +40,26 @@
         "name": "comment.block"
         },
       "control": {
-        "match": "\\siff|(?i)(if|else|while|for|then|to|begin|)\\s|end",
+        "match": "(?i)(if|else|while|for|then|to|begin|)\\s|end",
         "name": "keyword.control.untitled"
       },
+      "function": {
+        "patterns": [{
+          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|typicalprice)",
+          "name": "constant.character.entity.name.function"
+        }]
+      },
       "letter": {
-        "match": "(?i)(marketposition|var|array|data[0-9]|input|ticks|\\s(o|h|l|c|v)\\s)",
+        "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|data[0-9]|input|ticks|(?<=\\s|=|\\()(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\s|=|\\)))",
         "name": "constant.character"
       },
       "var": {
         "match": "(?i)value[0-9]|(?i)plot[0-9]|(?i)condition[0-9]",
         "name": "keyword.var"
+      },
+      "operators": {
+        "match": "(?i)(or|and|true|false)",
+        "name": "keyword.op"
       },
       "paren-expression": {
         "begin": "\\(",
@@ -62,20 +74,10 @@
         "patterns": [{ "include": "#expression" }]
       },
       "entities": {
-        "patterns": [
-          {
-            "captures": {
-              "1": {
-                "name": "punctuation.definition.entity"
-              },
-              "3": {
-                "name": "punctuation.definition.entity"
-              }
-            },
-            "match": "[0-9]+",
-            "name": "constant.character.entity.numeric.decimal"
-          }
-        ]
+        "patterns": [{
+          "match": "[0-9]+",
+          "name": "constant.character.entity.numeric.decimal"
+        }]
       }
     }
   }
