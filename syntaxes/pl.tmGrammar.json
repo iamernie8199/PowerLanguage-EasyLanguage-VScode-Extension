@@ -59,7 +59,7 @@
         }]
       },
       "letter": {
-        "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))",
+        "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))",
         "name": "constant.character"
       },
       "var": {
