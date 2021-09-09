@@ -18,7 +18,8 @@
     { "open": "if", "close": " then" },
     { "open": "stop", "close": ";" },
     { "open": "market", "close": ";" },
-    { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+    { "open": "\\\"", "close": "\\\"", "notIn": ["string", "comment"] },
+	{ "open": "'", "close": "'", "notIn": ["string", "comment"] },
     { "open": "`", "close": "`", "notIn": ["string", "comment"] }
   ],
   "autoCloseBefore": ";",
