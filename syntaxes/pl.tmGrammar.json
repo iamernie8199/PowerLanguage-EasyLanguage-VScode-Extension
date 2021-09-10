@@ -13,9 +13,15 @@
         { "include": "#control" },
         { "name": "string.quoted.single", "begin": "'", "end": "'" },
         { "name": "string.quoted.double", "begin": "\"", "end": "\"" },
+        { "name": "keyword.operator.logical", "match": "(?i)\\b(or|and|not)" },
+        { "name": "constant.numeric.decimal", "match": "[0-9]+" },
         {
-          "name": "constant.character.entity.numeric.decimal",
-          "match": "[0-9]+"
+          "name": "invalid.deprecated",
+          "match": "(?i)((?<=\\W)(A|An|At|Based|By|Does|Is|Of|On|Place|Than|The|Was)\\b)"
+        },
+        {
+          "match": "<|<=|<>|=|>=|>|(?i)(cross(es)? (over|below))",
+          "name": "keyword.operator.comparison"
         },
         {
           "name": "comment.block",
@@ -35,32 +41,28 @@
             "0": { "name": "punctuation.definition.comment" }
           },
           "end": "\n"
+        },
+        {
+          "name": "constant.language",
+          "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
         }
       ]
     },
     "control": {
       "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))",
-      "name": "keyword.control.untitled"
+      "name": "keyword.control"
     },
     "function": {
       "patterns": [
         {
-          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|SquareRoot|typicalprice|ceiling|floor)",
+          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|SquareRoot|typicalprice|ceiling|floor|(open|high|low|close)d)",
           "name": "constant.character.entity.name.function"
         }
       ]
     },
-    "letter": {
-      "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))",
-      "name": "constant.character"
-    },
     "var": {
       "match": "(?i)value[0-9]|(?i)plot[0-9]|(?i)condition[0-9]",
       "name": "keyword.var"
-    },
-    "operators": {
-      "match": "(?i)\\s(or|and)",
-      "name": "keyword.op"
     },
     "paren-expression": {
       "begin": "\\(",
