@@ -4,24 +4,25 @@
   "repository": {
     "expression": {
       "patterns": [
-        { "include": "#comments_block" },
-        { "include": "#letter" },
         { "include": "#var" },
         { "include": "#paren-expression" },
         { "include": "#function" },
-        { "include": "#operators" },
-        { "include": "#control" },
         { "name": "string.quoted.single", "begin": "'", "end": "'" },
         { "name": "string.quoted.double", "begin": "\"", "end": "\"" },
         { "name": "keyword.operator.logical", "match": "(?i)\\b(or|and|not)" },
+        { "name": "support.type.order", "match":"\\b(?i)(buy|sell|buytocover|sellshort)\\b"},
         { "name": "constant.numeric.decimal", "match": "[0-9]+" },
+        {
+          "name": "keyword.control",
+          "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))"
+        },
         {
           "name": "invalid.deprecated",
           "match": "(?i)((?<=\\W)(A|An|At|Based|By|Does|Is|Of|On|Place|Than|The|Was)\\b)"
         },
         {
-          "match": "<|<=|<>|=|>=|>|(?i)(cross(es)? (over|below))",
-          "name": "keyword.operator.comparison"
+          "name": "keyword.operator.comparison",
+          "match": "<|<=|<>|=|>=|>|(?i)(cross(es)? (over|below))"
         },
         {
           "name": "comment.block",
@@ -44,19 +45,15 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)(marketposition|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
+          "match": "(?i)(marketposition|barssinceentry|market(?=;)|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
         }
       ]
-    },
-    "control": {
-      "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))",
-      "name": "keyword.control"
     },
     "function": {
       "patterns": [
         {
-          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|SquareRoot|typicalprice|ceiling|floor|(open|high|low|close)d)",
-          "name": "constant.character.entity.name.function"
+          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|(open|high|low|close)d)",
+          "name": "support.function"
         }
       ]
     },
