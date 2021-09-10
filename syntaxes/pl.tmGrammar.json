@@ -45,20 +45,20 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)(marketposition|barssinceentry|market(?=;)|var(?:s|iable(?:s|)|)|array|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
+          "match": "(?i)(Numericsimple|marketposition|barssinceentry|market(?=;)|var(?:s|iable(?:s|)|)|\\barray(?:s|)|false|true|data[0-9]|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
         }
       ]
     },
     "function": {
       "patterns": [
         {
-          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|(open|high|low|close)d)",
+          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|\\b(open|high|low|close)d)",
           "name": "support.function"
         }
       ]
     },
     "var": {
-      "match": "(?i)value[0-9]|(?i)plot[0-9]|(?i)condition[0-9]",
+      "match": "(?i)value[0-9]+|(?i)plot[0-9]|(?i)condition[0-9]",
       "name": "keyword.var"
     },
     "paren-expression": {
