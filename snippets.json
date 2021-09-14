@@ -1,0 +1,21 @@
+{
+  "For Loop": {
+    "prefix": ["for"],
+    "body": ["for ${2:value1} 1 to ${1:$RANDOM} begin", "\t$0", "end;"],
+    "description": "A for loop."
+  },
+  "Marketposition": {
+    "prefix": ["if m"],
+    "body": ["if marketposition ${1:=} 0 then begin", "\t$0", "end;"]
+  },
+  "Day Trade": {
+    "prefix": ["if t"],
+    "body": [
+      "if t=${2:1327} then begin",
+      "\t$1sell(\"EoD_L\") next bar market;",
+      "\t$0buytocover(\"EoD_S\") next bar market;",
+      "end;",
+      "//setexitonclose;"
+    ]
+  }
+}
