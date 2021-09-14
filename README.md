@@ -5,13 +5,18 @@ VScode Extension for PowerLanguage/EasyLanguage
 - Basic Syntax Highlighting
   - control
   - comment
-  - some reserved words(ohlc, value)
+  - some reserved words(ohlc, value...)
 - Autoclosing
   - quotes
   - begin...end
 - Auto Indent
   - begin
   - then(On Enter)
+  - input/var/array
+- Snippets
+  - for
+  - marketposition
+  - Day Trade
 
 ## Usage
 - Run the `Run Extension` target in the Debug View
@@ -20,4 +25,4 @@ VScode Extension for PowerLanguage/EasyLanguage
 - [ ] Format Code
 - [ ] Syntax Highlighting(All reserved words)
 - [ ] Semantic Highlight
-- [ ] Snippets
+- [ ] More Snippets
