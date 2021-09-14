@@ -22,6 +22,8 @@ VScode Extension for PowerLanguage/EasyLanguage
 
 ## Usage
 - Run the `Run Extension` target in the Debug View
+or
+- Run the `code --install-extension powerlanguage-configuration-0.0.1.vsix` to install the extension
 
 ## Todo
 - [ ] More Snippets
