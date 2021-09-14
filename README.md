@@ -18,6 +18,7 @@ VScode Extension for PowerLanguage/EasyLanguage
   - if
   - marketposition
   - Day Trade
+  - others
 
 ## Usage
 - Run the `Run Extension` target in the Debug View
@@ -26,4 +27,4 @@ VScode Extension for PowerLanguage/EasyLanguage
 - [ ] More Snippets
 - [ ] Format Code
 - [ ] Semantic Highlight
-- [ ] Syntax Highlighting(All reserved words)
+- [ ] Syntax Highlighting(More [reserved words](https://www.multicharts.com/trading-software/images/c/c6/PowerLanguage_Keyword_Reference.pdf))
