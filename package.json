@@ -1,40 +1,48 @@
 {
-    "name": "powerlanguage-configuration",
-    "displayName": "PowerLanguage/EasyLanguage Configuration",
-    "description": "PowerLanguage/EasyLanguage Configuration",
-    "version": "0.0.1",
-    "publisher": "iamernie8199",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/iamernie8199/PowerLanguage-EasyLanguage-VScode-Extension.git"
-    },
-    "engines": {
-        "vscode": "^1.28.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "powerlanguage-configuration",
+  "displayName": "PowerLanguage/EasyLanguage Configuration",
+  "description": "PowerLanguage/EasyLanguage Configuration",
+  "version": "0.0.1",
+  "publisher": "iamernie8199",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamernie8199/PowerLanguage-EasyLanguage-VScode-Extension.git"
+  },
+  "engines": {
+    "vscode": "^1.28.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "powerlanguage",
+        "extensions": [
+          ".pl",
+          ".el"
+        ],
+        "aliases": [
+          "PowerLanguage",
+          "pl",
+          "el",
+          "EasyLanguage"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "powerlanguage",
-            "extensions": [
-                ".pl",
-                ".el"
-            ],
-            "aliases": [
-                "PowerLanguage",
-                "pl",
-                "el",
-                "EasyLanguage"
-            ],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [
-            {
-              "language": "powerlanguage",
-              "scopeName": "source.powerlanguage",
-              "path": "./syntaxes/pl.tmGrammar.json"
-            }
-        ]
-    }
+    "grammars": [
+      {
+        "language": "powerlanguage",
+        "scopeName": "source.powerlanguage",
+        "path": "./syntaxes/pl.tmGrammar.json"
+      }
+    ],
+    "snippets": [
+        {
+            "language": "powerlanguage",
+            "path": "./snippets.json"
+        }
+    ]
   }
+}
