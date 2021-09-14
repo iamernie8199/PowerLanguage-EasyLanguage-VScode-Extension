@@ -39,7 +39,7 @@
       ]
     },
     "var": {
-      "match": "(?i)value[0-9]+|(?i)plot[0-9]|(?i)condition[0-9]",
+      "match": "(?i)value[0-9]+|(?i)plot[0-9]+|(?i)condition[0-9]+",
       "name": "keyword.var"
     },
     "strings": {
