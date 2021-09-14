@@ -25,7 +25,7 @@
       "end;",
       "//setexitonclose;"
     ],
-    "description": "Clear position at the end of the day"
+    "description": "Close all position at the end of the day"
   },
   "Then Order": {
     "prefix": ["then"],
@@ -65,7 +65,7 @@
     "prefix": ["print"],
     "body": ["print($0);"]
   },
-  "Position Management": {
+  "Reducing positions": {
     "prefix": ["if c", "currentcontracts"],
     "body": ["if currentcontracts > 1 then begin", "\t$0", "end;"]
   },
