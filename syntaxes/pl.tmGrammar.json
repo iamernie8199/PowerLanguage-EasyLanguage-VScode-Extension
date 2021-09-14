@@ -17,8 +17,8 @@
           "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))"
         },
         {
-          "name": "invalid.deprecated",
-          "match": "(?i)((?<=\\W)(A|An|At|Based|By|Does|Is|Of|On|Place|Than|The|Was)\\b)"
+          "name": "invalid.deprecated.skip",
+          "match": "(?i)((?<=\\W)(A|An|At|Based|By|Does|From|Is|Of|On|Place|Than|The|Was)\\b)"
         },
         {
           "name": "keyword.operator.comparison",
