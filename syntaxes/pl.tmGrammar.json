@@ -22,7 +22,7 @@
         },
         {
           "name": "keyword.operator.comparison",
-          "match": "<|<=|<>|=|>=|>|(?i)(cross(es)? (over|below))"
+          "match": "<|<=|<>|(?<!\\+|-|\\*|\/)=|>=|>|(?i)(cross(es)? (over|below))"
         },
         {
           "name": "constant.language",
