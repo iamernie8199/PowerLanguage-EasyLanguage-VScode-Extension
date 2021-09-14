@@ -1,12 +1,12 @@
 {
   "For Loop": {
     "prefix": ["for"],
-    "body": ["for ${2:value1} 1 to ${1:$RANDOM} begin", "\t$0", "end;"],
+    "body": ["for ${1:value1} 1 to ${2:$RANDOM} begin", "\t$0", "end;"],
     "description": "A for loop."
   },
   "if(line)": {
     "prefix": ["if"],
-    "body": ["if $1 then$0;"]
+    "body": ["if $1 then$0"]
   },
   "if(block)": {
     "prefix": ["if"],
@@ -19,15 +19,34 @@
   "Day Trade": {
     "prefix": ["if t"],
     "body": [
-      "if t=${2:1327} then begin",
-      "\t$1sell(\"EoD_L\") next bar market;",
-      "\t$0buytocover(\"EoD_S\") next bar market;",
+      "if t=${1:1327} then begin",
+      "\tsell(\"EoD_L\") next bar market;",
+      "\tbuytocover(\"EoD_S\") next bar market;",
       "end;",
       "//setexitonclose;"
     ]
   },
-  "Order": {
+  "Then Order": {
     "prefix": ["then"],
-    "body": ["then ${1|buy,sell,sellshort,buytocover|} next bar ${0:market}"]
+    "body": ["then ${1|buy,sell,sellshort,buytocover|} next bar ${2:market};"]
+  },
+  "Buy Order": {
+    "prefix": ["b","bu","buy"],
+    "body": ["${1|buy,buytocover|} next bar ${2:market};"]
+  },
+  "Sell Order": {
+    "prefix": ["s","se","sell"],
+    "body": ["${1|sell,sellshort|} next bar ${2:market};"]
+  },
+  "Setting": {
+    "prefix": ["hi","setting"],
+    "body": [
+        "$BLOCK_COMMENT_START",
+        "\tInstruments: ${1:TXF}",
+        "\tResolution: ${2:3}",
+        "\tSession: ${3:0845-1330}",
+        "\t$0",
+        "$BLOCK_COMMENT_END"
+    ]
   }
 }

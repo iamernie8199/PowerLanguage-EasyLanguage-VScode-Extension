@@ -13,8 +13,6 @@
     { "open": "[", "close": "]" },
     { "open": "(", "close": ")" },
     { "open": "begin", "close": "\n\t\nend" },
-    { "open": "buy", "close": " next bar " },
-    { "open": "sell", "close": " next bar " },
     { "open": "stop", "close": ";" },
     { "open": "market", "close": ";" },
     { "open": "\"", "close": "\"", "notIn": ["string", "comment"] },
