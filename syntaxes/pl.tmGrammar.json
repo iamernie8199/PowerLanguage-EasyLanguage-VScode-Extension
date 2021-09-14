@@ -7,11 +7,11 @@
         { "include": "#var" },
         { "include": "#paren-expression" },
         { "include": "#function" },
-        { "name": "string.quoted.single", "begin": "'", "end": "'" },
-        { "name": "string.quoted.double", "begin": "\"", "end": "\"" },
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
         { "name": "keyword.operator.logical", "match": "(?i)\\b(or|and|not)" },
         { "name": "support.type.order", "match":"\\b(?i)(buy|sell|buytocover|sellshort)\\b"},
-        { "name": "constant.numeric.decimal", "match": "[0-9]+" },
         {
           "name": "keyword.control",
           "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))"
@@ -23,25 +23,6 @@
         {
           "name": "keyword.operator.comparison",
           "match": "<|<=|<>|=|>=|>|(?i)(cross(es)? (over|below))"
-        },
-        {
-          "name": "comment.block",
-          "begin": "{",
-          "beginCaptures": {
-            "0": { "name": "punctuation.definition.comment.begin" }
-          },
-          "end": "}",
-          "endCaptures": {
-            "0": { "name": "punctuation.definition.comment.end" }
-          }
-        },
-        {
-          "name": "comment.line.double-slash",
-          "begin": "//",
-          "beginCaptures": {
-            "0": { "name": "punctuation.definition.comment" }
-          },
-          "end": "\n"
         },
         {
           "name": "constant.language",
@@ -61,17 +42,40 @@
       "match": "(?i)value[0-9]+|(?i)plot[0-9]|(?i)condition[0-9]",
       "name": "keyword.var"
     },
-    "paren-expression": {
-      "begin": "\\(",
-      "end": "\\)",
-      "beginCaptures": {
-        "0": { "name": "punctuation.paren.open" }
-      },
-      "endCaptures": {
-        "0": { "name": "punctuation.paren.close" }
-      },
-      "name": "expression.group",
-      "patterns": [{ "include": "#expression" }]
-    }
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.single", "begin": "'", "end": "'" },
+        { "name": "string.quoted.double", "begin": "\"", "end": "\"" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.decimal", "match": "[0-9]+" },
+        { "name": "constant.numeric.float", "match": "([0-9]+|(?<=\\s|))(\\.)([0-9]+)" }
+      ]
+    },
+    "comments": {
+			"patterns": [
+        {
+          "name": "comment.block",
+          "begin": "{",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment.begin" }
+          },
+          "end": "}",
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.comment.end" }
+          }
+        },
+        {
+          "name": "comment.line.double-slash",
+          "begin": "//",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.comment" }
+          },
+          "end": "\n"
+        }
+			]
+		}
   }
 }
