@@ -42,7 +42,7 @@
   },
   "onEnterRules": [
     {
-      "beforeText": "(?i)^\\s*(?:var(s)?|array(s)|input(s)?).*?:\\s*$",
+      "beforeText": "(^\\s*(?:var(s)?|array(s)?|input(s)?).*?:|then)\\s*$",
       "action": {
         "indent": "indent",
         "appendText": ";"
