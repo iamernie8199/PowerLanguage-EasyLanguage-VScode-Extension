@@ -24,7 +24,8 @@
       "\tbuytocover(\"EoD_S\") next bar market;",
       "end;",
       "//setexitonclose;"
-    ]
+    ],
+    "description": "Clear position at the end of the day"
   },
   "Then Order": {
     "prefix": ["then"],
@@ -47,15 +48,18 @@
       "\tSession: ${3:0845-1330}",
       "\t$0",
       "$BLOCK_COMMENT_END"
-    ]
+    ],
+    "description": "Description for signal"
   },
   "GGG": {
     "prefix": ["open>close", "close<open", "GGG"],
-    "body": ["o>c ${1:and o[1]>c[1]} ${2:and o[2]>c[2]}"]
+    "body": ["o>c ${1:and o[1]>c[1]} ${2:and o[2]>c[2]}"],
+    "description": "3 Black sticks."
   },
   "RRR": {
     "prefix": ["close>open", "open<close", "RRR"],
-    "body": ["c>o ${1:and c[1]>o[1]} ${2:and c[2]>o[2]}"]
+    "body": ["c>o ${1:and c[1]>o[1]} ${2:and c[2]>o[2]}"],
+    "description": "3 White sticks."
   },
   "Print": {
     "prefix": ["print"],
@@ -64,5 +68,9 @@
   "Position Management": {
     "prefix": ["if c", "currentcontracts"],
     "body": ["if currentcontracts > 1 then begin", "\t$0", "end;"]
+  },
+  "Cross": {
+    "prefix": ["cross"],
+    "body": ["cross ${1|over,below|}"]
   }
 }
