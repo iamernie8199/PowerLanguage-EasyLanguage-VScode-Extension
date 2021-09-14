@@ -33,7 +33,7 @@
     "function": {
       "patterns": [
         {
-          "match": "(?i)((?<=\\s|=|\\()iff|BollingerBand|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|\\b(open|high|low|close)d)",
+          "match": "(?i)((?<=\\s|=|\\()iff|BollingerBand|print|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|\\b(open|high|low|close)d)",
           "name": "support.function"
         }
       ]
