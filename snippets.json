@@ -4,6 +4,10 @@
     "body": ["for ${2:value1} 1 to ${1:$RANDOM} begin", "\t$0", "end;"],
     "description": "A for loop."
   },
+  "if": {
+    "prefix": ["if"],
+    "body": ["if $1 then $0;"]
+  },
   "Marketposition": {
     "prefix": ["if m"],
     "body": ["if marketposition ${1:=} 0 then begin", "\t$0", "end;"]
