@@ -15,6 +15,7 @@ VScode Extension for PowerLanguage/EasyLanguage
   - input/var/array
 - Snippets
   - for
+  - if
   - marketposition
   - Day Trade
 
@@ -22,7 +23,7 @@ VScode Extension for PowerLanguage/EasyLanguage
 - Run the `Run Extension` target in the Debug View
 
 ## Todo
-- [ ] Format Code
-- [ ] Syntax Highlighting(All reserved words)
-- [ ] Semantic Highlight
 - [ ] More Snippets
+- [ ] Format Code
+- [ ] Semantic Highlight
+- [ ] Syntax Highlighting(All reserved words)
