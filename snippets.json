@@ -72,5 +72,9 @@
   "Cross": {
     "prefix": ["cross"],
     "body": ["cross ${1|over,below|}"]
+  },
+  "EntriesToday": {
+    "prefix": ["EntriesToday"],
+    "body": ["EntriesToday(D)<${1:1}"]
   }
 }
