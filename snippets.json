@@ -14,7 +14,7 @@
   },
   "Marketposition": {
     "prefix": ["if m"],
-    "body": ["if marketposition ${1:=} 0 then begin", "\t$0", "end;"]
+    "body": ["if marketposition ${1|=,>,<,<>|} 0 then begin", "\t$0", "end;"]
   },
   "Day Trade": {
     "prefix": ["if t"],
@@ -43,7 +43,7 @@
     "body": [
         "$BLOCK_COMMENT_START",
         "\tInstruments: ${1:TXF}",
-        "\tResolution: ${2:3}",
+        "\tResolution: ${2:3}K",
         "\tSession: ${3:0845-1330}",
         "\t$0",
         "$BLOCK_COMMENT_END"
