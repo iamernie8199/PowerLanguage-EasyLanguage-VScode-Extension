@@ -10,8 +10,8 @@
         { "include": "#comments" },
         { "include": "#strings" },
         { "include": "#numbers" },
+        { "include": "#orders" },
         { "name": "keyword.operator.logical", "match": "(?i)\\b(or|and|not)" },
-        { "name": "support.type.order", "match":"\\b(?i)(buy|sell|buytocover|sellshort)\\b"},
         {
           "name": "keyword.control",
           "match": "(?i)(((if|else|while|for|then|to|begin|)\\s)|\\bend(?=;|\\s))"
@@ -26,14 +26,14 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)(Numericsimple|marketposition|barssinceentry|market(?=;)|var(?:s|iable(?:s|)|)|\\barray(?:s|)|false|true|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
+          "match": "(?i)(currentcontracts|Numericsimple|marketposition|barssinceentry|var(?:s|iable(?:s|)|)|\\barray(?:s|)|false|true|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
         }
       ]
     },
     "function": {
       "patterns": [
         {
-          "match": "(?i)((?<=\\s|=|\\()iff|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|\\b(open|high|low|close)d)",
+          "match": "(?i)((?<=\\s|=|\\()iff|BollingerBand|summation|XAverage|WAverage|EntriesToday|SquareRoot|typicalprice|ceiling|floor|\\b(open|high|low|close)d)",
           "name": "support.function"
         }
       ]
@@ -46,6 +46,13 @@
       "patterns": [
         { "name": "string.quoted.single", "begin": "'", "end": "'" },
         { "name": "string.quoted.double", "begin": "\"", "end": "\"" }
+      ]
+    },
+    "orders": {
+      "patterns": [
+        { "name": "support.type.order", "match":"\\b(?i)(buy\\s+to\\s+cover|sell\\s+short|buy|sell|buytocover|sellshort)\\b"},
+        { "name": "support.type.order", "match":"\\b(?i)(Contract(?:s|)|Share(?:s|)|Total)\\b"},
+        { "name": "support.type.order", "match":"\\b(?i)(stop|Limit|market|Or Lower|Or Higher)(?=;)"}
       ]
     },
     "numbers": {
