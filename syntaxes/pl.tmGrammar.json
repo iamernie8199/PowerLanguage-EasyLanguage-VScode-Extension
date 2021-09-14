@@ -52,7 +52,8 @@
       "patterns": [
         { "name": "support.type.order", "match":"\\b(?i)(buy\\s+to\\s+cover|sell\\s+short|buy|sell|buytocover|sellshort)\\b"},
         { "name": "support.type.order", "match":"\\b(?i)(Contract(?:s|)|Share(?:s|)|Total|all)\\b"},
-        { "name": "support.type.order", "match":"\\b(?i)(stop|Limit|market|Or Lower|Or Higher)(?=;)"}
+        { "name": "support.type.order", "match":"\\b(?i)(stop|Limit|market|Or Lower|Or Higher)(?=;)"},
+        { "name": "support.type.order", "match":"\\b(?i)stop\\b"}
       ]
     },
     "numbers": {
