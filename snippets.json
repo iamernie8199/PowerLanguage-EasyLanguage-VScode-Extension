@@ -31,22 +31,34 @@
     "body": ["then ${1|buy,sell,sellshort,buytocover|} next bar ${2:market};"]
   },
   "Buy Order": {
-    "prefix": ["b","bu","buy"],
+    "prefix": ["buytocover"],
     "body": ["${1|buy,buytocover|} next bar ${2:market};"]
   },
   "Sell Order": {
-    "prefix": ["s","se","sell"],
+    "prefix": ["sellshort"],
     "body": ["${1|sell,sellshort|} next bar ${2:market};"]
   },
   "Setting": {
-    "prefix": ["hi","setting"],
+    "prefix": ["setting"],
     "body": [
-        "$BLOCK_COMMENT_START",
-        "\tInstruments: ${1:TXF}",
-        "\tResolution: ${2:3}K",
-        "\tSession: ${3:0845-1330}",
-        "\t$0",
-        "$BLOCK_COMMENT_END"
+      "$BLOCK_COMMENT_START",
+      "\tInstruments: ${1:TXF}",
+      "\tResolution: ${2:3}K",
+      "\tSession: ${3:0845-1330}",
+      "\t$0",
+      "$BLOCK_COMMENT_END"
     ]
+  },
+  "GGG": {
+    "prefix": ["open>close", "close<open", "GGG"],
+    "body": ["o>c ${1:and o[1]>c[1]} ${2:and o[2]>c[2]}"]
+  },
+  "RRR": {
+    "prefix": ["close>open", "open<close", "RRR"],
+    "body": ["c>o ${1:and c[1]>o[1]} ${2:and c[2]>o[2]}"]
+  },
+  "Print": {
+    "prefix": ["print"],
+    "body": ["print($0);"]
   }
 }
