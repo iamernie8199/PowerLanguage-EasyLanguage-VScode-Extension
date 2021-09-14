@@ -53,7 +53,9 @@
         { "name": "support.type.order", "match":"\\b(?i)(buy\\s+to\\s+cover|sell\\s+short|buy|sell|buytocover|sellshort)\\b"},
         { "name": "support.type.order", "match":"\\b(?i)(Contract(?:s|)|Share(?:s|)|Total|all)\\b"},
         { "name": "support.type.order", "match":"\\b(?i)(stop|Limit|market|Or Lower|Or Higher)(?=;)"},
-        { "name": "support.type.order", "match":"\\b(?i)stop\\b"}
+        { "name": "support.type.order", "match":"\\b(?i)stop\\b"},
+        { "name": "support.type.order", "match":"(?i)(SetExitOnClose|SetStopPosition|SetStopContract|SetStopShare)(?=;)"},
+        { "name": "support.type.order", "match":"\\b(?i)(SetPercentTrailing_pt|SetPercentTrailing|SetDollarTrailing|SetBreakEven_pt|SetBreakEven|SetProfitTarget_pt|SetProfitTarget|SetStopLoss_pt|SetStopLoss|SetTrailingStop_pt)\\b"}
       ]
     },
     "numbers": {
