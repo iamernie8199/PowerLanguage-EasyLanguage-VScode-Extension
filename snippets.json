@@ -60,5 +60,9 @@
   "Print": {
     "prefix": ["print"],
     "body": ["print($0);"]
+  },
+  "Position Management": {
+    "prefix": ["if c", "currentcontracts"],
+    "body": ["if currentcontracts > 1 then begin", "\t$0", "end;"]
   }
 }
