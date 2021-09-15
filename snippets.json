@@ -76,5 +76,17 @@
   "EntriesToday": {
     "prefix": ["EntriesToday"],
     "body": ["EntriesToday(D)<${1:1}"]
+  },
+  "HighLow": {
+    "prefix": ["highest","lowest"],
+    "body": ["${1|highest,lowest|}(${2:c}, ${3:5})"]
+  },
+  "Begin":{
+    "prefix": ["begin"],
+    "body": [
+      "begin",
+      "\t$0",
+      "end${1:;}"
+    ]
   }
 }
