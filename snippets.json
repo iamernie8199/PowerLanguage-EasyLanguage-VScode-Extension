@@ -77,6 +77,10 @@
     "prefix": ["EntriesToday"],
     "body": ["EntriesToday(D)<${1:1}"]
   },
+  "Barssinceentry": {
+    "prefix": ["Barssinceentry"],
+    "body": ["Barssinceentry(${1:0})"]
+  },
   "HighLow": {
     "prefix": ["highest", "lowest"],
     "body": ["${1|highest,lowest|}(${2:c}, ${3:5})"]
