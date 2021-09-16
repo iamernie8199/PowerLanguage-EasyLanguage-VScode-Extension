@@ -96,5 +96,9 @@
   "HighD":{
     "prefix": ["HighD"],
     "body": ["HighD(${1:0})"]
+  },
+  "Market":{
+    "prefix": ["Market"],
+    "body": ["Market;"]
   }
 }
