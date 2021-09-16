@@ -88,5 +88,13 @@
   "Begin": {
     "prefix": ["begin"],
     "body": ["begin", "\t$0", "end${1:;}"]
+  },
+  "LowD":{
+    "prefix": ["LowD"],
+    "body": ["LowD(${1:0})"]
+  },
+  "HighD":{
+    "prefix": ["HighD"],
+    "body": ["HighD(${1:0})"]
   }
 }
