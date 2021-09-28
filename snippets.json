@@ -1,7 +1,7 @@
 {
   "For Loop": {
     "prefix": ["for"],
-    "body": ["for ${1:value1} 1 to ${2:$RANDOM} begin", "\t$0", "end;"],
+    "body": ["for ${1:value1} = 1 to ${2:$RANDOM} begin", "\t$0", "end;"],
     "description": "A for loop."
   },
   "if(line)": {
