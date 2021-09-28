@@ -26,7 +26,7 @@
         },
         {
           "name": "constant.language",
-          "match": "(?i)(currentcontracts|Numericsimple|marketposition|barssinceentry|var(?:s|iable(?:s|)|)|\\barray(?:s|)|false|true|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
+          "match": "(?i)(currentcontracts|Numericsimple|numericarrayref|marketposition|barssinceentry|var(?:s|iable(?:s|)|)|\\barray(?:s|)|false|true|input(?:s|)|ticks|(?<=\\W)(o(pen)?|h(igh)?|l(ow)?|c(lose)?|t(ime)?|v(olume)?|d(ay)?)(?=\\W))"
         }
       ]
     },
